@@ -1,0 +1,65 @@
+﻿@model IEnumerable<VisitorWebsite.Areas.Receptionist.Models.VisitorModel>
+
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">All Visitors</h5>
+
+                    <!-- Table with stripped rows -->
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Organization</th>
+                                <th>Department</th>
+                                <th>Host Name</th>
+                                <th>Purpose</th>
+                                <th>No of Person</th>
+                                <th>ID Proof</th>
+                                <th>ID Proof No.</th>
+                                <th>Visit date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var v in Model)
+                            {
+                                <tr>
+                                    <td>@v.VisitorName</td>
+                                    <td>@v.OrganizationName</td>
+                                    <td>@v.DepartmentName</td>
+                                    <td>@v.HostName</td>
+                                    <td>@v.Purpose</td>
+                                    <td class="text-center">@v.NoOfPerson</td>
+                                    <td>@v.IDProof</td>
+                                    <td>@v.IDProofNumber</td>
+                                    <td>@v.VisitDate</td>
+                                    <td>
+                                        @{
+                                            if(v.CheckIn!=null && v.CheckOut==null){
+                                                <span class="badge bg-danger">CheckedIn</span>
+                                            }
+                                            else if (v.CheckIn != null && v.CheckOut != null){
+                                                <span class="badge bg-success">CheckedOut</span>
+                                            }else if(v.CheckIn==null && v.CheckOut==null){
+                                                <span class="badge bg-warning">Not defined</span>
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <!-- End Table with stripped rows -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

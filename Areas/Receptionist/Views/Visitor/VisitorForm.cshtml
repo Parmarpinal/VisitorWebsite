@@ -1,0 +1,183 @@
+﻿@model VisitorWebsite.Areas.Receptionist.Models.VisitorModel;
+
+<section class="section">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Visitor Form</h5>
+
+                    <!-- Multi Columns Form -->
+                    <form class="row g-3" method="post" asp-area="Receptionist" asp-controller="Visitor" asp-action="Save">
+                        <div class="col-md-12">
+                            <label asp-for="UserID">User Name</label>
+                            <select class="form-select" id="UserID" asp-for="UserID">
+                                <option value="">Select User</option>
+                                @foreach (var v in ViewBag.UserList)
+                                {
+                                    <option value="@v.UserID">@v.UserName</option>
+                                }
+                            </select>
+                            <span asp-validation-for="UserID" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="OrganizationID">Organization Name</label>
+                            <select class="form-select" id="OrganizationID" asp-for="OrganizationID">
+                                <option value="">Select organization</option>
+                                @foreach (var v in ViewBag.OrganizationList)
+                                {
+                                    <option value="@v.OrganizationID">@v.OrganizationName</option>
+                                }
+                            </select>
+                            <span asp-validation-for="OrganizationID" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="DepartmentID">Department Name</label>
+                            <select class="form-select" id="DepartmentID" asp-for="DepartmentID">
+                                <option value="">Select Department</option>
+                            </select>
+                            <span asp-validation-for="DepartmentID" class="text-danger"></span>
+                        </div>
+                        <div class="col-12">
+                            <label asp-for="Purpose" class="form-label">Purpose</label>
+                            <input type="text" class="form-control" asp-for="Purpose">
+                            <span asp-validation-for="Purpose" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="HostID">Host Name</label>
+                            <select class="form-select" id="HostID" asp-for="HostID">
+                                <option value="">Select Host</option>
+                            </select>
+                            <span asp-validation-for="HostID" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="NoOfPerson" class="form-label">No. of person</label>
+                            <input type="text" class="form-control" asp-for="NoOfPerson">
+                            <span asp-validation-for="NoOfPerson" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="IDProof" class="form-label">ID Proof</label>
+                            <input type="text" class="form-control" asp-for="IDProof">
+                            <span asp-validation-for="IDProof" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="IDProofNumber" class="form-label">ID Proof number</label>
+                            <input type="text" class="form-control" asp-for="IDProofNumber">
+                            <span asp-validation-for="IDProofNumber" class="text-danger"></span>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        @* <div class="col-lg-6">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Horizontal Form</h5>
+
+                    <!-- Display data -->
+                    <div>
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">User Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputText">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Mobile No</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Gender</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Age</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">City</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> *@
+    </div>
+</section>
+
+@section Scripts{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#OrganizationID").change(function () {
+                var orgID = $(this).val();
+                if (orgID) {
+                    $.ajax({
+                        url: '@Url.Action("GetDepartmentByOrganizationID", "Visitor")',
+                        type: "POST",
+                        data: { id: orgID },
+                        success: function (data) {
+                            $("#DepartmentID").empty().append('<option value="">Select Department</option>');
+                            $.each(data, function (i, v) {
+                                $("#DepartmentID").append('<option value="' + v.departmentID + '">' + v.departmentName + '</option>');
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error fetching departments: " + error);
+                        }
+                    });
+                } else {
+                    $("#DepartmentID").empty().append('<option value="">Select Department</option>');
+                }
+            });
+
+            $("#DepartmentID").change(function () {
+                var orgID = $(this).val();
+                if (orgID) {
+                    $.ajax({
+                        url: '@Url.Action("GetHostByDepartmentID", "Visitor")',
+                        type: "POST",
+                        data: { id: orgID },
+                        success: function (data) {
+                            $("#HostID").empty().append('<option value="">Select Host</option>');
+                            $.each(data, function (i, v) {
+                                $("#HostID").append('<option value="' + v.hostID + '">' + v.hostName + '</option>');
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            console.error("Error fetching hosts: " + error);
+                        }
+                    });
+                } else {
+                    $("#HostID").empty().append('<option value="">Select Host</option>');
+                }
+            });
+        });
+    </script>
+}

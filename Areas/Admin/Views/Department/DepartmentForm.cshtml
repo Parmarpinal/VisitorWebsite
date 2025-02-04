@@ -1,0 +1,61 @@
+@model VisitorWebsite.Areas.Admin.Models.DepartmentModel
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="card" style="border:1px solid #2b3643;">
+                    <form method="post" asp-controller="Department" asp-action="Save">
+                        <div class="card-header">
+                            <div class="card-title">Department Form</div>
+                        </div>
+                        <div class="card-body p-3">
+                            @if (!ViewData.ModelState.IsValid)
+                            {
+                                <div asp-validation-summary="All" class="alert alert-danger" role="alert"></div>
+                            }
+
+                            <input type="text" value="@Model.DepartmentID" asp-for="DepartmentID" />
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label asp-for="DepartmentName">Department Name</label>
+                                        <input asp-for="DepartmentName"
+                                               type="text"
+                                               class="form-control" />
+                                        <span asp-validation-for="DepartmentName" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label asp-for="OrganizationID">Organization Name</label>
+                                        <select
+                                               class="form-select" asp-for="OrganizationID" >
+                                               <option value="">Select organization</option>
+                                            @foreach (var v in ViewBag.OrganizationList){
+                                                <option value="@v.OrganizationID">@v.OrganizationName</option>
+                                            }
+                                               </select>
+                                        <span asp-validation-for="OrganizationID" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success" type="submit">Submit</button>
+                            <a class="btn btn-danger" asp-controller="Department" asp-action="GetDepartment">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}

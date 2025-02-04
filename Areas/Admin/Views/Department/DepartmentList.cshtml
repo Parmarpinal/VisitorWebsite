@@ -1,0 +1,117 @@
+﻿@model List<VisitorWebsite.Areas.Admin.Models.DepartmentModel>
+
+<div class="container">
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="border:1px solid #2b3643;">
+                    <div class="card-header">
+                        <div class="d-flex align-items-center">
+                            <h4 class="card-title">Departments</h4>
+                            <a class="btn btn-primary btn-round ms-auto"
+                            asp-area="Admin"
+                               asp-controller="Department" asp-action="DepartmentForm">
+                                <i class="fa fa-plus"></i>
+                                Add Department
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+                            <table id="add-row"
+                                   class="display table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Department Name</th>
+                                        <th>Organization Name</th>
+                                        <th class="text-center">Host count</th>
+                                        <th style="width: 10%" class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                
+                                <tbody>
+                                    
+                                    @foreach (var v in Model)
+                                    {
+                                        <tr>
+                                            <td>@v.DepartmentName</td>
+                                            <td>@v.OrganizationName</td>
+                                            <td class="text-center"><a class="btn btn-outline-success" asp-area="Admin" asp-controller="User" asp-action="GetHosts" asp-route-departmentID="@v.DepartmentID">@v.HostCount</a></td>
+                                            <td class="text-center">
+                                                <div class="form-button-action">
+                                                    <a asp-controller="Department" asp-action="DepartmentForm" asp-route-id="@v.DepartmentID"
+                                                            class="btn btn-link btn-warning btn-lg" >
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                    <a data-id="@v.DepartmentID"
+                                                            class="btn btn-link btn-danger btn-lg"
+                                                            id="deleteRecord">
+                                                        <i class="fa fa-times"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+                                  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+     <script>
+         $(document).ready(function () {
+
+             // Add Row
+             $("#add-row").DataTable({
+                 pageLength: 5,
+             });
+
+            $(document).on('click', '#deleteRecord', function () {
+                const id = $(this).data('id'); //Retrieve the ID from the button's data-id attribute
+                console.log('ID ============= ' + id);
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "This action cannot be undone!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                           url: `http://localhost:5153/api/Department/${id}`,
+                            type: 'DELETE', 
+                            success: function (response) {
+                                Swal.fire(
+                                    'Deleted!',
+                                    'The record has been deleted.',
+                                    'success'
+                                ).then(() => {
+                                    location.reload();
+                                });
+                            },
+                            error: function (xhr, status, error) {
+                                console.log('Error ============ ' + error);
+                                Swal.fire(
+                                    'Error!',
+                                    'Failed to delete the record.',
+                                    'error'
+                                );
+                            }
+                        });
+                    }
+                });
+            });
+
+         });
+        
+     </script>
+}

@@ -1,0 +1,88 @@
+﻿@model VisitorWebsite.Areas.Admin.Models.OrganizationModel
+
+<div class="container">
+          <div class="page-inner">
+            <div class="row">
+              <div class="col-md-12">
+              
+                <div class="card" style="border:1px solid #2b3643;">
+                    <form method="post" asp-controller="Organization" asp-action="Save">
+                  <div class="card-header">
+                     <div class="card-title">Organization Form</div>
+                  </div>
+                  <div class="card-body p-3">
+                      @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div asp-validation-summary="All" class="alert alert-danger" role="alert"></div>
+                    }
+
+                        <input type="text" value="@Model.OrganizationID" asp-for="OrganizationID" />
+                    <div class="row">
+                      <div class="col">
+                        <div class="form-group">
+                          <label asp-for="OrganizationName">Organization Name</label>
+                          <input asp-for="OrganizationName"
+                            type="text"
+                            class="form-control" />
+                          <span asp-validation-for="OrganizationName" class="text-danger"></span>
+                        </div>
+                      </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label asp-for="Head">Head Name</label>
+                                <input type="text"
+                                        class="form-control" asp-for="Head"/>
+                                <span asp-validation-for="Head" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label asp-for="City">City Name</label>
+                                    <input type="text"
+                                            class="form-control" asp-for="City"/>
+                                        <span asp-validation-for="City" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label asp-for="EstablishedDate">Established date</label>
+                                    <input type="cal"
+                                            class="form-control" asp-for="EstablishedDate" />
+                                    <span asp-validation-for="EstablishedDate" class="text-danger"></span>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label asp-for="Address">Address</label>
+                                <textarea
+                                        class="form-control" rows="5" asp-for="Address"></textarea>
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="card-action">
+                        <button class="btn btn-success" type="submit">Submit</button>
+                        <a class="btn btn-danger" asp-controller="Organization" asp-action="GetOrganization">Cancel</a>
+                  </div>
+                    </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
