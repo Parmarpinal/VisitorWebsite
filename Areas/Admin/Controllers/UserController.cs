@@ -5,6 +5,7 @@ using VisitorWebsite.Areas.Admin.Models;
 
 namespace VisitorWebsite.Areas.Admin.Controllers
 {
+    [CheckAccess]
     [Area("Admin")]
     public class UserController : Controller
     {
@@ -73,6 +74,7 @@ namespace VisitorWebsite.Areas.Admin.Controllers
         #region HostForm
         public async Task<IActionResult> HostForm(int? UserID)
         {
+            await LoadOrganization();
             if (UserID.HasValue)
             {
                 var response = await _client.GetAsync($"User/{UserID}");
@@ -80,12 +82,16 @@ namespace VisitorWebsite.Areas.Admin.Controllers
                 {
                     var data = await response.Content.ReadAsStringAsync();
                     var user = JsonConvert.DeserializeObject<UserModel>(data);
-                    await LoadOrganization();
-                    if(user.OrganizationID != null)
-                    {
-                        ViewBag.DepartmentList = LoadDepartment(user.OrganizationID.Value);
-                        GetDepartmentByOrganizationID(user.OrganizationID.Value);
-                    }                   
+                    //await LoadOrganization();
+                    //if(user.OrganizationID != null)
+                    //{
+                    //    ViewBag.DepartmentList = LoadDepartment(user.OrganizationID.Value);
+                    //    GetDepartmentByOrganizationID(user.OrganizationID.Value);
+                    //}
+
+                    ViewBag.DepartmentList = LoadDepartment((int)user.OrganizationID);
+                    await GetDepartmentByOrganizationID((int)user.OrganizationID);
+
                     return View(user);
                 }
             }
@@ -120,17 +126,66 @@ namespace VisitorWebsite.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var json = JsonConvert.SerializeObject(model);
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
-                HttpResponseMessage response;
+                if(model.UserID == 0)
+                {
+                    IFormFile? file = model.ImageFile;
+                    if (file != null && file.Length > 0)
+                    {
+                        using (var content = new MultipartFormDataContent())
+                        {
+                            using (var fileStream = file.OpenReadStream())
+                            {
+                                content.Add(new StreamContent(fileStream), "file", file.FileName);
 
+                                HttpResponseMessage response = await _client.PostAsync("Image/upload", content);
+
+                                if (response.IsSuccessStatusCode)
+                                {
+                                    string imageUrl = await response.Content.ReadAsStringAsync();
+                                    Console.WriteLine(imageUrl);
+                                    model.ImagePath = imageUrl;
+                                }
+                                else
+                                {
+                                    TempData["ErrorMessage"] = "Failed to upload file.";
+                                    await LoadOrganization();
+                                    if (model.UserTypeID == 1)
+                                    {
+                                        return View("HostForm", model);
+                                    }
+                                    else
+                                    {
+                                        return View("ReceptionistForm", model);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                //✅ Step 2: Send User Data to "User" API(excluding ImageFile)
+                var userJson = JsonConvert.SerializeObject(model);
+
+                var contentUser = new StringContent(userJson, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage responseUser;
                 if (model.UserID == 0)
-                    response = await _client.PostAsync($"User", content);
+                {
+                    responseUser = await _client.PostAsync("User", contentUser);
+                }
                 else
-                    response = await _client.PutAsync($"User/{model.UserID}", content);
+                {
+                    if(model.ImagePath == null)
+                    {
+                        model.ImagePath = "";
+                    }
+                    responseUser = await _client.PutAsync($"User/{model.UserID}", contentUser);
+                }
 
-                if (response.IsSuccessStatusCode)
-                    if(model.UserTypeID == 1)
+
+                if (responseUser.IsSuccessStatusCode)
+                {
+                    if (model.UserTypeID == 1)
                     {
                         return RedirectToAction("GetHosts");
                     }
@@ -138,7 +193,27 @@ namespace VisitorWebsite.Areas.Admin.Controllers
                     {
                         return RedirectToAction("GetReceptionists");
                     }
+                    //return RedirectToAction("Login", "Home");
+                }
+                else
+                {
+                    //Console.WriteLine(responseUser.Content.ToString());
+                    TempData["ErrorMessage"] = "User registration failed.";
+                    //return View("SignUp", model);
+                    await LoadOrganization();
+                    if (model.UserTypeID == 1)
+                    {
+                        return View("HostForm", model);
+                    }
+                    else
+                    {
+                        return View("ReceptionistForm", model);
+                    }
+                }
             }
+
+            TempData["ErrorMessage"] = "User registration failed.";
+            //return View("SignUp", model);
             await LoadOrganization();
             if (model.UserTypeID == 1)
             {

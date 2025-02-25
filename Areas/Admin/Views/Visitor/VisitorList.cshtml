@@ -17,6 +17,7 @@
                                    class="display table table-hover table-striped">
                                 <thead>
                                     <tr>
+                                        <th>Image</th>
                                         <th class="col">Name</th>
                                         <th class="col">Organization</th>
                                         <th class="col">Department</th>
@@ -25,8 +26,8 @@
                                         <th class="text-center col">No of Person</th>
                                         <th class="col">ID Proof</th>
                                         <th class="col">ID Proof No.</th>
-                                        <th class="col-5">Visit date</th>
-                                        <th class="col">Status</th>
+                                        <th class="col">Visit date</th>
+                                        <th class="col text-center">Status</th>
                                     </tr>
                                 </thead>
 
@@ -35,6 +36,16 @@
                                     @foreach (var v in Model)
                                     {
                                         <tr class="text-center">
+                                            <td>
+                                                @if (string.IsNullOrEmpty(v.VisitorImage))
+                                                {
+                                                    <img src="~/img/profile.jpg" alt="profile" style="width:60px;height:60px;border-radius:15px" />
+                                                }
+                                                else
+                                                {
+                                                    <img src="@v.VisitorImage" alt="profile" style="width:60px;height:60px;border-radius:15px" />
+                                                }
+                                            </td>
                                             <td class="col">@v.VisitorName</td>
                                             <td class="col">@v.OrganizationName</td>
                                             <td class="col">@v.DepartmentName</td>
@@ -43,8 +54,8 @@
                                             <td class="text-center col">@v.NoOfPerson</td>
                                             <td class="col">@v.IDProof</td>
                                             <td class="col">@v.IDProofNumber</td>
-                                            <td class="col-5">@v.VisitDate</td>
-                                            <td class="col">
+                                            <td class="col">@v.VisitDate.ToString("dd/MM/yyyy") <br/> @v.VisitDate.ToString("hh:mm tt")</td>
+                                            <td class="col text-center">
                                                 @{
                                                     if (v.CheckIn != null && v.CheckOut == null)
                                                     {

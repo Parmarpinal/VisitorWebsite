@@ -59,13 +59,13 @@
             <div class="sidebar-logo">
                 <!-- Logo Header -->
                 <div class="logo-header" data-background-color="dark">
-                    <a href="index.html" class="text-white" >
+                    <h3 class="text-white">
                         @* <img src="~/img/kaiadmin/logo_light.svg" *@
                         @*      alt="navbar brand" *@
                         @*      class="navbar-brand" *@
                         @*      height="20" /> *@
-                        Visitor Panel
-                    </a>
+                        Super VMS
+                    </h3>
                     <div class="nav-toggle">
                         <button class="btn btn-toggle toggle-sidebar">
                             <i class="gg-menu-right"></i>
@@ -121,6 +121,12 @@
                                 <p>Receptionist Data</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a asp-area="" asp-controller="Home" asp-action="Logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <p>Logout</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -153,7 +159,7 @@
                     <!-- End Logo Header -->
                 </div>
                 <!-- Navbar Header -->
-                <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+                <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom" style="background-color:#A2A2CE">
                     <div class="container-fluid">
 
                         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
@@ -163,11 +169,11 @@
                                    data-bs-toggle="dropdown"
                                    href="#"
                                    aria-expanded="false">
-                                    <div class="avatar-sm">
+                                    @* <div class="avatar-sm">
                                         <img src="~/img/profile.jpg"
                                              alt="..."
                                              class="avatar-img rounded-circle" />
-                                    </div>
+                                    </div> *@
                                     <span class="profile-username me-4">
                                         <span class="op-7 fs-5">Hi,</span>
                                         <span class="fw-bold fs-5">Admin</span>

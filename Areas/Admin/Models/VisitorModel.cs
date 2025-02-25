@@ -24,6 +24,8 @@
         public TimeOnly? CheckOut { get; set; }
         public string? OrganizationName { get; set; }
         public string? DepartmentName { get; set; }
+
+        public string? VisitorImage { get; set; }
         
     }
 }

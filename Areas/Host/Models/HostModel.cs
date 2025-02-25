@@ -13,6 +13,6 @@
         public string OrganizationName { get; set; }
         public int DepartmentID { get; set; }
         public string DepartmentName { get; set; }
-        public DateTime JoiningDate { get; set; }
+        public DateTime? JoiningDate { get; set; }
     }
 }

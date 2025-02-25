@@ -6,6 +6,7 @@ using VisitorWebsite.Areas.Admin.Models;
 namespace VisitorWebsite.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [CheckAccess]
     public class OrganizationController : Controller
     {
         Uri baseAddress = new Uri("http://localhost:5153/api");

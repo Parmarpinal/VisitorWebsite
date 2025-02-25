@@ -1,0 +1,176 @@
+﻿@model IEnumerable<VisitorWebsite.Models.VisitorModel>
+
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">My Visits</h5>
+
+                    <!-- Table with stripped rows -->
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th>Organization</th>
+                                <th>Department</th>
+                                <th>Host Name</th>
+                                <th>Purpose</th>
+                                <th class="text-center">No of Person</th>
+                                <th>ID Proof</th>
+                                <th>ID Proof No.</th>
+                                <th>Visit date</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">View Pass</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var v in Model)
+                            {
+                                <tr>
+                                    <td>@v.OrganizationName</td>
+                                    <td>@v.DepartmentName</td>
+                                    <td>@v.HostName</td>
+                                    <td>@v.Purpose</td>
+                                    <td class="text-center">@v.NoOfPerson</td>
+                                    <td>@v.IDProof</td>
+                                    <td>@v.IDProofNumber</td>
+                                    <td>@v.VisitDate.ToShortDateString()</td>
+                                    <td class="text-center">
+                                        @{
+                                            if (v.CheckIn != null && v.CheckOut == null)
+                                            {
+                                                <span class="badge bg-danger">CheckedIn</span>
+                                            }
+                                            else if (v.CheckIn != null && v.CheckOut != null)
+                                            {
+                                                <span class="badge bg-success">CheckedOut</span>
+                                            }
+                                            else if (v.CheckIn == null && v.CheckOut == null)
+                                            {
+                                                <span class="badge bg-warning">Not defined</span>
+                                            }
+                                        }
+                                    </td>
+                                    <td class="text-center"><button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal-@v.VisitorID"><i class="bi bi-eye-fill"></i></button></td>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modal-@v.VisitorID" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Visitor Pass</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="container p-1" style="background-color:darkslateblue;border-radius:10px;box-shadow:0px 0px 20px darkslateblue;width:61vh;height:37vh">
+                                                        <div class="row text-white">
+                                                            @* <div class="col ms-2 mt-1" style="font-size:20px;font-weight:700"> *@
+                                                            @*     Gate Pass *@
+                                                            @* </div> *@
+                                                            <div class="col mt-1 ms-2 text-start">
+                                                                <span style="font-size:16px;font-weight:600">@v.OrganizationName</span><br />
+                                                                <span style="font-size:13px;">@v.Address</span>
+                                                            </div>
+                                                            <div class="col mt-1 text-end">
+                                                                <span>@v.DepartmentName</span><br />
+                                                                <span style="font-size:12px;">@v.VisitDate.ToShortDateString()</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-3 mb-3 ms-1 me-1 p-2 d-flex align-items-center justify-content-between" style="height:19vh;background-color:#D2CEE8;color:darkslateblue">
+                                                            <div class="col" >
+                                                                <span style="font-weight:600">Visitor</span> : @CommonVariable.UserName()<br />
+                                                                <span style="font-weight:600">Host</span> : @v.HostName<br />
+                                                                <span style="font-weight:600">Purpose</span> : @v.Purpose<br />
+                                                                @* <span style="font-weight:600">Head</span> : @v.Head<br /> *@
+                                                                <span style="font-weight:600">City</span> : @v.City<br />
+                                                                <span style="font-weight:600">CheckIn</span> : @(v.CheckIn?.ToString("hh:mm tt") ?? "N/A") - @(v.CheckOut?.ToString("hh:mm tt") ?? "N/A")
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <div style="width:10vh; height:10vh ;border-radius:10px; display: flex; justify-content: center; align-items: center; border:3px solid darkslateblue">
+                                                                    @if(string.IsNullOrEmpty(@v.VisitorImage)){
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                                                        </svg>
+                                                                    }else{
+                                                                        <img src=@v.VisitorImage alt="Profile-Picture" style="width:9vh; height:9vh;border-radius:10px;">
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row d-flex align-items-center justify-content-center text-white">
+                                                            <div class="col-auto"><span class="mb-5 px-2 py-1" style="background-color:#D2CEE8;color:darkslateblue;font-weight:800;font-size:17px">Visitor Pass - @v.VisitorID</span></div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-warning" onclick="downloadVisitorPass(this)"><i class="bi bi-file-earmark-arrow-down"></i> Download</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                    <!-- End Table with stripped rows -->
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> 
+
+    <script>
+        $(document).ready(function () {
+
+            // Add Row
+            $("#datatable").DataTable({
+                pageLength: 5,
+            });
+            
+        });
+
+        // Function to download the visitor pass as PNG
+        // function downloadVisitorPass(button) {
+        //     var modal = button.closest('.modal'); Get the correct modal
+        //     var passElement = modal.querySelector(".modal-body .container"); Select the Visitor Pass div
+
+        //     html2canvas(passElement).then(function (canvas) {
+        //         var image = canvas.toDataURL("image/png"); Convert to PNG
+        //         var link = document.createElement("a");
+        //         link.href = image;
+        //         link.download = "VisitorPass.png"; Set filename
+        //         link.click();
+        //     });
+        // }
+
+        function downloadVisitorPass(button) {
+            var modal = button.closest('.modal'); // Get the correct modal
+            var passElement = modal.querySelector(".modal-body .container"); // Select the Visitor Pass div
+
+            html2canvas(passElement, {
+                useCORS: true, // Enable CORS to load external images
+                allowTaint: false, // Do not taint the canvas
+                scale: 2 // Improve image quality
+            }).then(function (canvas) {
+                var image = canvas.toDataURL("image/png"); // Convert to PNG
+                var link = document.createElement("a");
+                link.href = image;
+                link.download = "VisitorPass.png"; // Set filename
+                link.click();
+            });
+        }
+
+    </script>
+
+}

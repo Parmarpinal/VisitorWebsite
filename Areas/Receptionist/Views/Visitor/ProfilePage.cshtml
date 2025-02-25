@@ -12,7 +12,17 @@
                                 <img src="~/assets/img/profile-img.jpg" style="object-fit:cover" />
                             </div> *@
                             <div style="width:150px; height:150px ;border-radius:100px; display: flex; justify-content: center; align-items: center;box-shadow:0px 0px 20px darkslateblue">
-                                <img src="~/assets/img/profile-img.jpg" alt="Profile-Picture" class="rounded-circle" style="width:150px; height:150px">
+                                @if (string.IsNullOrEmpty(CommonVariable.ImagePath()))
+                                {
+                                    <svg xmlns="http://www.w3.org/2000/svg" style="width:150px; height:150px" fill="currentColor" class="bi bi-person-circle text-secondary" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                    </svg>
+                                }
+                                else
+                                {
+                                    <img src=@CommonVariable.ImagePath() alt="Profile-Picture" class="rounded-circle" style="width:150px; height:150px">
+                                }
                             </div>
                         </div>
                         <div class="col-8" style="color:darkslateblue; font-size:17px; font-weight:600">
@@ -85,7 +95,8 @@
                                 </div>
                                 <div class="col">:</div>
                                 <div class="col-5">
-                                    @Model.JoiningDate
+                                    @(Model.JoiningDate?.ToString("dd-MM-yyyy") ?? "N/A") <br />
+                                    @(Model.JoiningDate?.ToString("hh:mm tt") ?? "")
                                 </div>
                             </div>
                         </div>

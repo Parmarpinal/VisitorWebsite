@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qoBtS3NxhlFNPyp8jKajZfyBVsG1haR9ZrPOPixQVq4=",
+  "Hash": "LvdZooZfzN8YBzaOpTtWW0CUBAfKBITa2SuVsHoErcY=",
   "Source": "VisitorWebsite",
   "BasePath": "_content/VisitorWebsite",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "70s9yjxl1r",
-      "Integrity": "B9ThdyKLG75NpQ0mqC9w1Pu6ioK2ggxab3RD4ExgCrQ=",
+      "Fingerprint": "5cpptq3e1u",
+      "Integrity": "ex5UnMJADo+RkiWoNVCdMUbgEom9ZNboyROEKIgNzpw=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\style.css"
@@ -10916,6 +10916,69 @@
       "OriginalItemSpec": "wwwroot\\img\\arashmil.jpg"
     },
     {
+      "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg1.jpg",
+      "SourceId": "VisitorWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\",
+      "BasePath": "_content/VisitorWebsite",
+      "RelativePath": "img/bg1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xgk4phobfp",
+      "Integrity": "X+LdYBdjEMyqsbXetTqPHPP/RxMn8ZMuJG5A3XWvsqY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bg1.jpg"
+    },
+    {
+      "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg2.webp",
+      "SourceId": "VisitorWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\",
+      "BasePath": "_content/VisitorWebsite",
+      "RelativePath": "img/bg2#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4zah6ryebv",
+      "Integrity": "0AO0JzX5Lf5lRez4j2bbTrYa0DjPyMYaijR3StvTeyU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bg2.webp"
+    },
+    {
+      "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg3.svg",
+      "SourceId": "VisitorWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\",
+      "BasePath": "_content/VisitorWebsite",
+      "RelativePath": "img/bg3#[.{fingerprint}]?.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3q1jflxztd",
+      "Integrity": "hb09CSdSuv+gFV0okBZDUmN2dMFdhasByCRX1ZZazJg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bg3.svg"
+    },
+    {
       "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg-404.jpeg",
       "SourceId": "VisitorWebsite",
       "SourceType": "Discovered",
@@ -17006,6 +17069,48 @@
       "OriginalItemSpec": "wwwroot\\img\\flags\\zw.png"
     },
     {
+      "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img1.jpg",
+      "SourceId": "VisitorWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\",
+      "BasePath": "_content/VisitorWebsite",
+      "RelativePath": "img/img1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2gii4zh01n",
+      "Integrity": "4i3FKXDgbUpm5iyeTmOIwBcN0M6U/CW56Lj7moS38dY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\img1.jpg"
+    },
+    {
+      "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img2.jpg",
+      "SourceId": "VisitorWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\",
+      "BasePath": "_content/VisitorWebsite",
+      "RelativePath": "img/img2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o4f3kwv48b",
+      "Integrity": "WHN3+vcRKoclLjt597WaPpVxZksTn0YuvxVby7Pnh1s=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\img2.jpg"
+    },
+    {
       "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img-shadow.png",
       "SourceId": "VisitorWebsite",
       "SourceType": "Discovered",
@@ -17447,6 +17552,27 @@
       "OriginalItemSpec": "wwwroot\\img\\kaiadmin\\logo_light.svg"
     },
     {
+      "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\logo.png",
+      "SourceId": "VisitorWebsite",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\",
+      "BasePath": "_content/VisitorWebsite",
+      "RelativePath": "img/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "eswq4af3te",
+      "Integrity": "fsRVvnPlfiBk5tMi+a7aFiUzoflgx+WUswpUStlJ1gc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
+    },
+    {
       "Identity": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\logoproduct.svg",
       "SourceId": "VisitorWebsite",
       "SourceType": "Discovered",
@@ -17545,8 +17671,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "51eejsgih6",
-      "Integrity": "d15KK/vwlDmPQZtAVe51l6UK3r2XowZmktM5h8421ns=",
+      "Fingerprint": "7fvb1rh1y7",
+      "Integrity": "07CdmaT6xEEAg+lkDqAlM6feJP8bTNa1kwa2OZxRVCg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\profile.jpg"
@@ -19822,7 +19948,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "assets/css/style.70s9yjxl1r.css",
+      "Route": "assets/css/style.5cpptq3e1u.css",
       "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\assets\\css\\style.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -19832,7 +19958,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "20973"
+          "Value": "20953"
         },
         {
           "Name": "Content-Type",
@@ -19840,11 +19966,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B9ThdyKLG75NpQ0mqC9w1Pu6ioK2ggxab3RD4ExgCrQ=\""
+          "Value": "\"ex5UnMJADo+RkiWoNVCdMUbgEom9ZNboyROEKIgNzpw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Feb 2025 12:31:04 GMT"
+          "Value": "Wed, 19 Feb 2025 14:31:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -19854,7 +19980,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "70s9yjxl1r"
+          "Value": "5cpptq3e1u"
         },
         {
           "Name": "label",
@@ -19862,7 +19988,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-B9ThdyKLG75NpQ0mqC9w1Pu6ioK2ggxab3RD4ExgCrQ="
+          "Value": "sha256-ex5UnMJADo+RkiWoNVCdMUbgEom9ZNboyROEKIgNzpw="
         }
       ]
     },
@@ -19877,7 +20003,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "20973"
+          "Value": "20953"
         },
         {
           "Name": "Content-Type",
@@ -19885,11 +20011,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"B9ThdyKLG75NpQ0mqC9w1Pu6ioK2ggxab3RD4ExgCrQ=\""
+          "Value": "\"ex5UnMJADo+RkiWoNVCdMUbgEom9ZNboyROEKIgNzpw=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 03 Feb 2025 12:31:04 GMT"
+          "Value": "Wed, 19 Feb 2025 14:31:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -19899,7 +20025,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-B9ThdyKLG75NpQ0mqC9w1Pu6ioK2ggxab3RD4ExgCrQ="
+          "Value": "sha256-ex5UnMJADo+RkiWoNVCdMUbgEom9ZNboyROEKIgNzpw="
         }
       ]
     },
@@ -62216,6 +62342,252 @@
       ]
     },
     {
+      "Route": "img/bg1.jpg",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45266"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"X+LdYBdjEMyqsbXetTqPHPP/RxMn8ZMuJG5A3XWvsqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-X+LdYBdjEMyqsbXetTqPHPP/RxMn8ZMuJG5A3XWvsqY="
+        }
+      ]
+    },
+    {
+      "Route": "img/bg1.xgk4phobfp.jpg",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "45266"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"X+LdYBdjEMyqsbXetTqPHPP/RxMn8ZMuJG5A3XWvsqY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xgk4phobfp"
+        },
+        {
+          "Name": "label",
+          "Value": "img/bg1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-X+LdYBdjEMyqsbXetTqPHPP/RxMn8ZMuJG5A3XWvsqY="
+        }
+      ]
+    },
+    {
+      "Route": "img/bg2.4zah6ryebv.webp",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg2.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "159522"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0AO0JzX5Lf5lRez4j2bbTrYa0DjPyMYaijR3StvTeyU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4zah6ryebv"
+        },
+        {
+          "Name": "label",
+          "Value": "img/bg2.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0AO0JzX5Lf5lRez4j2bbTrYa0DjPyMYaijR3StvTeyU="
+        }
+      ]
+    },
+    {
+      "Route": "img/bg2.webp",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg2.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "159522"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0AO0JzX5Lf5lRez4j2bbTrYa0DjPyMYaijR3StvTeyU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0AO0JzX5Lf5lRez4j2bbTrYa0DjPyMYaijR3StvTeyU="
+        }
+      ]
+    },
+    {
+      "Route": "img/bg3.3q1jflxztd.svg",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg3.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "510985"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hb09CSdSuv+gFV0okBZDUmN2dMFdhasByCRX1ZZazJg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3q1jflxztd"
+        },
+        {
+          "Name": "label",
+          "Value": "img/bg3.svg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-hb09CSdSuv+gFV0okBZDUmN2dMFdhasByCRX1ZZazJg="
+        }
+      ]
+    },
+    {
+      "Route": "img/bg3.svg",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg3.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "510985"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"hb09CSdSuv+gFV0okBZDUmN2dMFdhasByCRX1ZZazJg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-hb09CSdSuv+gFV0okBZDUmN2dMFdhasByCRX1ZZazJg="
+        }
+      ]
+    },
+    {
       "Route": "img/bg-404.cr62qcvc0j.jpeg",
       "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg-404.jpeg",
       "Selectors": [],
@@ -85996,6 +86368,170 @@
       ]
     },
     {
+      "Route": "img/img1.2gii4zh01n.jpg",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76833"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4i3FKXDgbUpm5iyeTmOIwBcN0M6U/CW56Lj7moS38dY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2gii4zh01n"
+        },
+        {
+          "Name": "label",
+          "Value": "img/img1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4i3FKXDgbUpm5iyeTmOIwBcN0M6U/CW56Lj7moS38dY="
+        }
+      ]
+    },
+    {
+      "Route": "img/img1.jpg",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "76833"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4i3FKXDgbUpm5iyeTmOIwBcN0M6U/CW56Lj7moS38dY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4i3FKXDgbUpm5iyeTmOIwBcN0M6U/CW56Lj7moS38dY="
+        }
+      ]
+    },
+    {
+      "Route": "img/img2.jpg",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "346246"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WHN3+vcRKoclLjt597WaPpVxZksTn0YuvxVby7Pnh1s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WHN3+vcRKoclLjt597WaPpVxZksTn0YuvxVby7Pnh1s="
+        }
+      ]
+    },
+    {
+      "Route": "img/img2.o4f3kwv48b.jpg",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "346246"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WHN3+vcRKoclLjt597WaPpVxZksTn0YuvxVby7Pnh1s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o4f3kwv48b"
+        },
+        {
+          "Name": "label",
+          "Value": "img/img2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WHN3+vcRKoclLjt597WaPpVxZksTn0YuvxVby7Pnh1s="
+        }
+      ]
+    },
+    {
       "Route": "img/img-shadow.45ob6kmsg9.png",
       "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img-shadow.png",
       "Selectors": [],
@@ -87718,6 +88254,88 @@
       ]
     },
     {
+      "Route": "img/logo.eswq4af3te.png",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66596"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fsRVvnPlfiBk5tMi+a7aFiUzoflgx+WUswpUStlJ1gc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eswq4af3te"
+        },
+        {
+          "Name": "label",
+          "Value": "img/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fsRVvnPlfiBk5tMi+a7aFiUzoflgx+WUswpUStlJ1gc="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.png",
+      "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "66596"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fsRVvnPlfiBk5tMi+a7aFiUzoflgx+WUswpUStlJ1gc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 16 Feb 2025 19:34:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fsRVvnPlfiBk5tMi+a7aFiUzoflgx+WUswpUStlJ1gc="
+        }
+      ]
+    },
+    {
       "Route": "img/logoproduct.go4rbw5vli.svg",
       "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\logoproduct.svg",
       "Selectors": [],
@@ -88046,7 +88664,7 @@
       ]
     },
     {
-      "Route": "img/profile.51eejsgih6.jpg",
+      "Route": "img/profile.7fvb1rh1y7.jpg",
       "AssetFile": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\profile.jpg",
       "Selectors": [],
       "ResponseHeaders": [
@@ -88056,7 +88674,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19934"
+          "Value": "6865"
         },
         {
           "Name": "Content-Type",
@@ -88064,11 +88682,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"d15KK/vwlDmPQZtAVe51l6UK3r2XowZmktM5h8421ns=\""
+          "Value": "\"07CdmaT6xEEAg+lkDqAlM6feJP8bTNa1kwa2OZxRVCg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 17:09:13 GMT"
+          "Value": "Sun, 16 Feb 2025 19:44:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -88078,7 +88696,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "51eejsgih6"
+          "Value": "7fvb1rh1y7"
         },
         {
           "Name": "label",
@@ -88086,7 +88704,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-d15KK/vwlDmPQZtAVe51l6UK3r2XowZmktM5h8421ns="
+          "Value": "sha256-07CdmaT6xEEAg+lkDqAlM6feJP8bTNa1kwa2OZxRVCg="
         }
       ]
     },
@@ -88101,7 +88719,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "19934"
+          "Value": "6865"
         },
         {
           "Name": "Content-Type",
@@ -88109,11 +88727,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"d15KK/vwlDmPQZtAVe51l6UK3r2XowZmktM5h8421ns=\""
+          "Value": "\"07CdmaT6xEEAg+lkDqAlM6feJP8bTNa1kwa2OZxRVCg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 01 Jan 2025 17:09:13 GMT"
+          "Value": "Sun, 16 Feb 2025 19:44:56 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -88123,7 +88741,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-d15KK/vwlDmPQZtAVe51l6UK3r2XowZmktM5h8421ns="
+          "Value": "sha256-07CdmaT6xEEAg+lkDqAlM6feJP8bTNa1kwa2OZxRVCg="
         }
       ]
     },
@@ -97006,7 +97624,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 16 Jan 2025 13:39:15 GMT"
+          "Value": "Sun, 16 Feb 2025 19:59:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97051,7 +97669,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 16 Jan 2025 13:39:15 GMT"
+          "Value": "Sun, 16 Feb 2025 19:59:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97096,7 +97714,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 16 Jan 2025 13:39:15 GMT"
+          "Value": "Sun, 16 Feb 2025 19:59:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -97133,7 +97751,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 16 Jan 2025 13:39:15 GMT"
+          "Value": "Sun, 16 Feb 2025 19:59:38 GMT"
         },
         {
           "Name": "Cache-Control",

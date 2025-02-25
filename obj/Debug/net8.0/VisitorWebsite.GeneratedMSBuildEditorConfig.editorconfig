@@ -80,6 +80,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSG9zdFxWaWV3c1xIb21lXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Areas/Host/Views/Home/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSG9zdFxWaWV3c1xIb21lXFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Areas/Host/Views/Visitor/VisitorList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSG9zdFxWaWV3c1xWaXNpdG9yXFZpc2l0b3JMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Areas/Host/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSG9zdFxWaWV3c1xfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -120,8 +128,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Home/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Home/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Home/VisitList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaXNpdExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Shared/Error.cshtml]
@@ -138,6 +158,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Shared/_LayoutReceptionist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRSZWNlcHRpb25pc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Shared/_Layout_Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Shared/_Sidebar_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlYmFyX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [F:/Pinal_College/Visitor_Management_System/VisitorWebsite/Views/Shared/_ValidationScriptsPartial.cshtml]

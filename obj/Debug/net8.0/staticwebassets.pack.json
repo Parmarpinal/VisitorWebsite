@@ -2077,6 +2077,18 @@
       "PackagePath": "staticwebassets\\img\\bg-404.jpeg"
     },
     {
+      "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg1.jpg",
+      "PackagePath": "staticwebassets\\img\\bg1.jpg"
+    },
+    {
+      "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg2.webp",
+      "PackagePath": "staticwebassets\\img\\bg2.webp"
+    },
+    {
+      "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\bg3.svg",
+      "PackagePath": "staticwebassets\\img\\bg3.svg"
+    },
+    {
       "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\blogpost.jpg",
       "PackagePath": "staticwebassets\\img\\blogpost.jpg"
     },
@@ -3237,6 +3249,14 @@
       "PackagePath": "staticwebassets\\img\\img-shadow.png"
     },
     {
+      "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img1.jpg",
+      "PackagePath": "staticwebassets\\img\\img1.jpg"
+    },
+    {
+      "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\img2.jpg",
+      "PackagePath": "staticwebassets\\img\\img2.jpg"
+    },
+    {
       "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\jm_denis.jpg",
       "PackagePath": "staticwebassets\\img\\jm_denis.jpg"
     },
@@ -3315,6 +3335,10 @@
     {
       "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\kaiadmin\\logo_light.svg",
       "PackagePath": "staticwebassets\\img\\kaiadmin\\logo_light.svg"
+    },
+    {
+      "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
       "Id": "F:\\Pinal_College\\Visitor_Management_System\\VisitorWebsite\\wwwroot\\img\\logoproduct.svg",

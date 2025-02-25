@@ -40,33 +40,49 @@
         .card {
             box-shadow: 0px 0px 30px #A2A2CE;
         }
+        /* Ensure the wrapper takes full height */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 91vh; /* Full height of the viewport */
+        }
+
+        /* Main content should grow to take the available space */
+        .content {
+            flex-grow: 1; /* Make content take up remaining space */
+            overflow-y: auto; /* Allow content to scroll if needed */
+        }
+
+        /* Footer should stay at the bottom */
+        .footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: auto; /* Push footer to the bottom */
+        }
+
     </style>
 </head>
 
 <body>
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center" style="background-color:darkslateblue;color:white">
+    @* <div class="wrapper"> *@
+    @*     <div class="content"> *@
+            <!-- ======= Header ======= -->
+            <header id="header" class="header fixed-top d-flex align-items-center" style="background-color:darkslateblue;color:white">
 
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="~/assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block text-warning">Super VMS</span>
-            </a>
-            <i class="bi bi-list toggle-sidebar-btn text-warning"></i>
-        </div><!-- End Logo -->
-
-
-        <nav class="header-nav ms-auto">
-            <ul class="d-flex align-items-center">
-
-                <li class="nav-item d-block d-lg-none">
-                    <a class="nav-link nav-icon search-bar-toggle " href="#">
-                        <i class="bi bi-search"></i>
+                <div class="d-flex align-items-center justify-content-between">
+                    <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
+                        <span class="d-none d-lg-block text-warning">Super VMS</span>
                     </a>
-                </li><!-- End Search Icon-->
+                    <i class="bi bi-list toggle-sidebar-btn text-warning"></i>
+                </div><!-- End Logo -->
 
-                <li class="nav-item me-4">
+
+                <nav class="header-nav ms-auto">
+                    <ul class="d-flex align-items-center">
+
+
+                        @* <li class="nav-item me-4">
                     <a class="nav-link text-warning" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
             </li>
                 <li class="nav-item me-4">
@@ -78,47 +94,74 @@
             </li>
                 <li class="nav-item me-4">
                 <a class="nav-link text-warning" asp-area="Receptionist" asp-controller="Home" asp-action="Index" asp-route-id=2>Receptionist</a>
-            </li>
-
-
-            </ul>
-        </nav><!-- End Icons Navigation -->
-
-    </header><!-- End Header -->
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar" style="background-color:#A2A2CE">
-
-        <ul class="sidebar-nav" id="sidebar-nav">
-
-            <li class="nav-item">
-                <a class="nav-link text-warning" asp-area="" asp-controller="Home" asp-action="Index" asp-route-id=1 style="border-radius:10px;background-color:darkslateblue;">
-                    <i class="bi bi-grid text-warning"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-
-            @* <li class="nav-item mt-1">
-                <a class="nav-link text-warning" style="border-radius:10px;background-color:darkslateblue">
-                    <i class="bi bi-menu-button-wide text-warning"></i><span>Notification</span>
-                </a>
             </li> *@
 
-            @*Light color===============> style="color:#D2CEE8" *@
-            @* <li class="nav-item">
-                <a class="nav-link text-warning" style="border-radius:10px;background-color:darkslateblue">
-                    <i class="bi bi-menu-button-wide text-warning"></i><span>My Past Visitors</span>
-                </a>
-            </li> *@
+                        <li class="nav-item dropdown pe-3">
 
-        </ul>
+                            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                                @if (string.IsNullOrEmpty(CommonVariable.ImagePath()))
+                                {
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-circle text-warning" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                                    </svg>
+                                }
+                                else
+                                {
+                                    <img src=@CommonVariable.ImagePath() alt="Profile" style="width:40px;height:40px;" class="rounded-circle">
+                                }
+                                <span class="d-none d-md-block dropdown-toggle ps-2 text-warning">@CommonVariable.UserName()</span>
+                            </a><!-- End Profile Iamge Icon -->
 
-    </aside><!-- End Sidebar-->
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                                <li class="dropdown-header">
+                                    <h6>@CommonVariable.UserName()</h6>
+                                    <span>Visitor</span>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
 
-    <main id="main" class="main">
-        <div class="container-fluid">
-            @RenderBody()
-        </div>
-    </main>
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Profile">
+                                        <i class="bi bi-person"></i>
+                                        <span>My Profile</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Logout">
+                                        <i class="bi bi-box-arrow-right"></i>
+                                        <span>Sign Out</span>
+                                    </a>
+                                </li>
+
+
+                            </ul><!-- End Profile Dropdown Items -->
+                        </li><!-- End Profile Nav -->
+
+
+                    </ul>
+                </nav><!-- End Icons Navigation -->
+
+            </header><!-- End Header -->
+            <!-- ======= Sidebar ======= -->
+            @* <partial name="_Sidebar_Layout"></partial> *@
+            @* @Html.Partial("_Sidebar_Layout") *@
+            @Html.RenderPartialAsync("_Sidebar_Layout")
+            <!-- End Sidebar-->
+
+            <main id="main" class="main" style="margin-top:40px;">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </main>
+    @*     </div> *@
+    @* </div> *@
+    
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">

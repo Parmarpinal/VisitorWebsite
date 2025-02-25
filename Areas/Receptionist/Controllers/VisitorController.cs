@@ -6,6 +6,7 @@ using VisitorWebsite.Areas.Receptionist.Models;
 namespace VisitorWebsite.Areas.Receptionist.Controllers
 {
     [Area("Receptionist")]
+    [CheckAccess]
     public class VisitorController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -30,7 +31,7 @@ namespace VisitorWebsite.Areas.Receptionist.Controllers
                 string data = response.Content.ReadAsStringAsync().Result;
                 Visitors = JsonConvert.DeserializeObject<List<VisitorModel>>(data);
             }
-            var v = Visitors.Where(x => x.CheckIn != null && x.CheckOut == null);
+            var v = Visitors.Where(x => x.CheckIn != null && x.CheckOut == null && x.OrganizationID == CommonVariable.OrganizationID());
             return View("VisitorListForCheckedIn", v);
         }
         #endregion
@@ -45,7 +46,8 @@ namespace VisitorWebsite.Areas.Receptionist.Controllers
                 string data = response.Content.ReadAsStringAsync().Result;
                 Visitors = JsonConvert.DeserializeObject<List<VisitorModel>>(data);
             }
-            return View("VisitorList", Visitors);
+            var v = Visitors.Where(x => x.OrganizationID == CommonVariable.OrganizationID());
+            return View("VisitorList", v);
         }
         #endregion
 
@@ -63,42 +65,42 @@ namespace VisitorWebsite.Areas.Receptionist.Controllers
         }
         #endregion
 
-        #region OrganizationDropDown
-        public async Task OrganizationDropDown()
-        {
-            List<OrganizationDropDownModel> organizations = new List<OrganizationDropDownModel>();
-            HttpResponseMessage response = await _client.GetAsync($"DropDown/organizations");
-            if (response.IsSuccessStatusCode)
-            {
-                string data = await response.Content.ReadAsStringAsync();
-                organizations = JsonConvert.DeserializeObject<List<OrganizationDropDownModel>>(data);
-                ViewBag.OrganizationList = organizations;
-            }
-        }
-        #endregion
+        //#region OrganizationDropDown
+        //public async Task OrganizationDropDown()
+        //{
+        //    List<OrganizationDropDownModel> organizations = new List<OrganizationDropDownModel>();
+        //    HttpResponseMessage response = await _client.GetAsync($"DropDown/organizations");
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        string data = await response.Content.ReadAsStringAsync();
+        //        organizations = JsonConvert.DeserializeObject<List<OrganizationDropDownModel>>(data);
+        //        ViewBag.OrganizationList = organizations;
+        //    }
+        //}
+        //#endregion
 
         #region LoadDepartment
-        public async Task<List<DepartmentDropDownModel>> LoadDepartment(int id)
+        public async Task LoadDepartment()
         {
             List<DepartmentDropDownModel> departments = new List<DepartmentDropDownModel>();
-            HttpResponseMessage response = await _client.GetAsync($"DropDown/departments/{id}");
+            HttpResponseMessage response = await _client.GetAsync($"DropDown/departments/{CommonVariable.OrganizationID()}");
             if (response.IsSuccessStatusCode)
             {
                 string data = await response.Content.ReadAsStringAsync();
                 departments = JsonConvert.DeserializeObject<List<DepartmentDropDownModel>>(data);
+                ViewBag.DepartmentList = departments;
             }
-            return departments;
         }
         #endregion
 
-        #region GetDepartmentByOrganizationID
-        [HttpPost]
-        public async Task<JsonResult> GetDepartmentByOrganizationID(int id)
-        {
-            List<DepartmentDropDownModel> departments = await LoadDepartment(id);
-            return Json(departments);
-        }
-        #endregion
+        //#region GetDepartmentByOrganizationID
+        //[HttpPost]
+        //public async Task<JsonResult> GetDepartmentByOrganizationID(int id)
+        //{
+        //    List<DepartmentDropDownModel> departments = await LoadDepartment(id);
+        //    return Json(departments);
+        //}
+        //#endregion
 
         #region LoadHost
         public async Task<List<HostDropDownModel>> LoadHost(int id)
@@ -126,7 +128,7 @@ namespace VisitorWebsite.Areas.Receptionist.Controllers
         #region VisitorForm
         public async Task<IActionResult> VisitorForm()
         {
-            await OrganizationDropDown();
+            await LoadDepartment();
             await UserDropDown();
             return View(new VisitorModel() {
             });
@@ -136,6 +138,7 @@ namespace VisitorWebsite.Areas.Receptionist.Controllers
         #region Save
         public async Task<IActionResult> Save(VisitorModel model)
         {
+            model.OrganizationID = Convert.ToInt32(CommonVariable.OrganizationID());
 
             if (ModelState.IsValid)
             {
@@ -155,25 +158,61 @@ namespace VisitorWebsite.Areas.Receptionist.Controllers
                 response = await _client.PostAsync($"Visitor", content);
 
                 if (response.IsSuccessStatusCode)
+                    await UploadNotification(model.HostID, $"Visitor \"{model.VisitorName}\" has checked in at {DateTime.Now.ToString("hh:mm tt")} on {DateTime.Now.ToString("dd-MM-yyyy")}."
+
+, model.VisitorID);
                     return RedirectToAction("GetVisitor");
             }
-            await OrganizationDropDown();
+            await LoadDepartment();
             await UserDropDown();
             return RedirectToAction("VisitorForm");
         }
         #endregion
 
         #region ProfilePage
-        public async Task<IActionResult> ProfilePage(int id)
+        public async Task<IActionResult> ProfilePage()
         {
             ReceptionistModel user = new ReceptionistModel();
-            HttpResponseMessage response = await _client.GetAsync($"User/specific/{id}");
+            int? id = CommonVariable.UserID();
+            HttpResponseMessage response = await _client.GetAsync($"User/{id}");
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
                 user = JsonConvert.DeserializeObject<ReceptionistModel>(data);
             }
             return View(user);
+        }
+        #endregion
+
+        #region LoadUser
+        public async Task<JsonResult> LoadUser(int id)
+        {
+            UserModel user = new UserModel();
+            HttpResponseMessage response = await _client.GetAsync($"User/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                string data = await response.Content.ReadAsStringAsync();
+                user = JsonConvert.DeserializeObject<UserModel>(data);
+            }
+            return Json(user);
+        }
+        #endregion
+
+        #region UploadNotification
+        public async Task UploadNotification(int hostID, string msg, int visitorID)
+        {
+
+            NotificationModel model = new NotificationModel();
+            model.HostID = hostID;
+            model.Message = msg;
+            model.VisitorID = visitorID;
+
+            var json = JsonConvert.SerializeObject(model);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response;
+
+            response = await _client.PostAsync($"Notification", content);
+            
         }
         #endregion
     }

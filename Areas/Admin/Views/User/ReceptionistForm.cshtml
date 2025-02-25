@@ -6,7 +6,7 @@
             <div class="col-md-12">
 
                 <div class="card" style="border:1px solid #2b3643;">
-                    <form method="post" asp-controller="User" asp-action="Save">
+                    <form method="post" asp-controller="User" asp-action="Save" enctype="multipart/form-data">
                         <div class="card-header">
                             <div class="card-title">Receptionist Form</div>
                         </div>
@@ -16,9 +16,23 @@
                                 <div asp-validation-summary="All" class="alert alert-danger" role="alert"></div>
                             }
 
-                            <input type="text" value="@Model.UserID" asp-for="UserID" />
-                            <input type="text" value=2 asp-for="UserTypeID" />
+                            <input type="hidden" value="@Model.UserID" asp-for="UserID" />
+                            <input type="hidden" value=2 asp-for="UserTypeID" />
+                            <input type="hidden" asp-for="ImagePath" value="@Model.ImagePath" />
                             <div class="row">
+                                @if (Model.UserID == 0)
+                                {
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label asp-for="ImageFile">User Image</label>
+                                            <input type="file" asp-for="ImageFile"
+                                                   class="form-control" />
+                                            <span asp-validation-for="ImageFile" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                }
+
                                 <div class="col">
                                     <div class="form-group">
                                         <label asp-for="UserName">User Name</label>
@@ -31,41 +45,32 @@
 
                                 <div class="col">
                                     <div class="form-group">
-                                        <label asp-for="Email">Email</label>
-                                        <input type="email"
-                                               class="form-control" asp-for="Email" />
-                                        <span asp-validation-for="Email" class="text-danger"></span>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label asp-for="City">City Name</label>
-                                        <input type="text"
-                                               class="form-control" asp-for="City" />
-                                        <span asp-validation-for="City" class="text-danger"></span>
+                                        <label asp-for="Age">Age</label>
+                                        <input type="number"
+                                               class="form-control" asp-for="Age" />
+                                        <span asp-validation-for="Age" class="text-danger"></span>
 
                                     </div>
                                 </div>
                             </div>
 
                             <div class="row">
+
                                 <div class="col">
                                     <div class="form-group">
-                                        <label asp-for="MobileNo">Mobile number</label>
-                                        <input asp-for="MobileNo"
-                                               type="text"
-                                               class="form-control" />
-                                        <span asp-validation-for="MobileNo" class="text-danger"></span>
+                                        <label asp-for="Email">Email</label>
+                                        <input type="email"
+                                               class="form-control" asp-for="Email" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
                                 </div>
 
                                 <div class="col">
                                     <div class="form-group">
-                                        <label asp-for="Age">Age</label>
-                                        <input type="number"
-                                               class="form-control" asp-for="Age" />
-                                        <span asp-validation-for="Age" class="text-danger"></span>
-
+                                        <label asp-for="Password">Password</label>
+                                        <input type="password" value="@Model.Password"
+                                               class="form-control" asp-for="Password" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
                                 </div>
 
@@ -94,6 +99,28 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
+                                        <label asp-for="MobileNo">Mobile number</label>
+                                        <input asp-for="MobileNo"
+                                               type="text"
+                                               class="form-control" />
+                                        <span asp-validation-for="MobileNo" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label asp-for="City">City Name</label>
+                                        <input type="text"
+                                               class="form-control" asp-for="City" />
+                                        <span asp-validation-for="City" class="text-danger"></span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
                                         <label asp-for="OrganizationID">Organization Name</label>
                                         <select class="form-select" asp-for="OrganizationID">
                                             <option value="">Select organization</option>
@@ -109,7 +136,7 @@
 
                         </div>
                         <div class="card-action">
-                            <button class="btn btn-success" type="submit">Submit</button>
+                            <input class="btn btn-success" type="submit" value="Submit" />
                             <a class="btn btn-danger" asp-controller="User" asp-action="GetReceptionists">Cancel</a>
                         </div>
                     </form>

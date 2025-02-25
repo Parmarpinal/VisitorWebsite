@@ -17,11 +17,11 @@
                                 <th>Department</th>
                                 <th>Host Name</th>
                                 <th>Purpose</th>
-                                <th>No of Person</th>
+                                <th class="text-center">No of Person</th>
                                 <th>ID Proof</th>
                                 <th>ID Proof No.</th>
                                 <th>Visit date</th>
-                                <th>Action</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,7 +37,19 @@
                                     <td class="text-center">@v.NoOfPerson</td>
                                     <td>@v.IDProof</td>
                                     <td>@v.IDProofNumber</td>
-                                    <td>@v.VisitDate</td>
+                                    <td style="width:120px">
+                                        @v.VisitDate.ToShortDateString()<br />
+
+                                        @{
+                                            TimeSpan? checkIn = v.CheckIn;
+
+                                            string formattedTime = checkIn.HasValue
+                                            ? DateTime.Today.Add(checkIn.Value).ToString("h:mm tt")  // Convert to 12-hour format with AM/PM
+                                            : "No check-in time";
+                                        }
+
+                                        <span>@formattedTime</span>
+                                    </td>
                                     <td class="text-center">
                                         <a id="UpdateRecord" data-id="@v.VisitorID" class="btn btn-success"><i class="bi bi-box-arrow-right"></i></a>
                                     </td>

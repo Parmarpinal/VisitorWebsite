@@ -23,6 +23,7 @@
                                    class="display table table-hover table-striped">
                                 <thead>
                                     <tr class="text-center">
+                                        <th>Image</th>
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Mobile No.</th>
@@ -41,6 +42,13 @@
                                     @foreach (var v in Model)
                                     {
                                         <tr class ="text-center">
+                                            <td>
+                                                @if(string.IsNullOrEmpty(v.ImagePath)){
+                                                    <img src="~/img/profile.jpg" alt="profile" style="width:60px;height:60px;border-radius:15px" />
+                                                }else{
+                                                    <img src="@v.ImagePath" alt="profile" style="width:60px;height:60px;border-radius:15px" />
+                                                }
+                                            </td>
                                             <td>@v.UserName</td>
                                             <td>@v.Email</td>
                                             <td>@v.MobileNo</td>
@@ -49,7 +57,7 @@
                                             <td>@v.City</td>
                                             <td>@v.OrganizationName</td>
                                             <td>@v.DepartmentName</td>
-                                            <td>@v.JoiningDate</td>
+                                            <td>@v.JoiningDate?.ToString("dd/MM/yyyy") <br> @v.JoiningDate?.ToString("hh:mm tt")</td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a asp-controller="User" asp-action="HostForm" asp-route-UserID="@v.UserID"

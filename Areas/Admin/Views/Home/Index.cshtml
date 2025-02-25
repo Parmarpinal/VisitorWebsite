@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="card card-stats card-round">
+            <a class="card card-stats card-round" asp-controller="Organization" asp-action="GetOrganization">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-icon">
@@ -24,10 +24,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col">
-            <div class="card card-stats card-round">
+            <a class="card card-stats card-round" asp-controller="Department" asp-action="GetDepartment">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-icon">
@@ -43,10 +43,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col">
-            <div class="card card-stats card-round">
+            <a class="card card-stats card-round" asp-controller="User" asp-action="GetHosts">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-icon">
@@ -62,10 +62,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col">
-            <div class="card card-stats card-round">
+            <a class="card card-stats card-round" asp-controller="User" asp-action="GetReceptionists">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-icon">
@@ -81,10 +81,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col">
-            <div class="card card-stats card-round">
+            <a class="card card-stats card-round" asp-controller="Visitor" asp-action="GetVisitor">
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-icon">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         
     </div>
@@ -134,7 +134,8 @@
                                         <td class="text-end">@v.ReceptionistCount</td>
                                         <td class="text-end">@v.Head</td>
                                         <td class="text-end">@v.City</td>
-                                        <td class="text-end">@v.EstablishedDate</td>
+                                        <td class="text-end">@v.EstablishedDate.ToString("dd/MM/yyyy \n hh:mm tt")</td>
+
                                     </tr>
                                 }
                             </tbody>
@@ -202,7 +203,7 @@
                                     <tr>
                                         <td class="text-end">@v.ReceptionistName</td>
                                         <td class="text-end">@v.OrganizationName</td>
-                                        <td class="text-end">@v.JoiningDate</td>
+                                        <td class="text-end">@v.JoiningDate.ToString("dd/MM/yyyy \n hh:mm tt")</td>
                                     </tr>
                                 }
                             </tbody>
@@ -239,7 +240,7 @@
                                         <td class="text-end">@v.OrganizationName</td>
                                         <td class="text-end">@v.DepartmentName</td>
                                         <td class="text-end">@v.VisitorCount</td>
-                                        <td class="text-end">@v.JoiningDate</td>
+                                        <td class="text-end">@v.JoiningDate.ToString("dd/MM/yyyy \n hh:mm tt")</td>
                                     </tr>
                                 }
                             </tbody>
@@ -250,7 +251,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card card-round">
                 <div class="card-header">
                     <div class="card-head-row card-tools-still-right">
@@ -264,6 +265,8 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">Visitor name</th>
+                                    <th scope="col" class="text-end">Organization name</th>
+                                    <th scope="col" class="text-end">Department name</th>
                                     <th scope="col" class="text-end">Purpose</th>
                                     <th scope="col" class="text-end">Host name</th>
                                     <th scope="col" class="text-end">Visit date</th>
@@ -277,9 +280,12 @@
                                         <th scope="row">
                                             @v.UserName
                                         </th>
+
+                                        <td class="text-end">@v.OrganizationName</td>
+                                        <td class="text-end">@v.DepartmentName</td>
                                         <td class="text-end">@v.Purpose</td>
                                         <td class="text-end">@v.HostName</td>
-                                        <td class="text-end">@v.VisitDate</td>
+                                        <td class="text-end">@v.VisitDate.ToString("dd/MM/yyyy \n hh:mm tt")</td>
                                         <td>
                                             @{
                                                 if (v.CheckIn != null && v.CheckOut == null)

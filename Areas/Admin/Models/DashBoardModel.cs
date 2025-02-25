@@ -37,6 +37,10 @@
         public DateTime VisitDate { get; set; }
         public TimeOnly? CheckIn { get; set; }
         public TimeOnly? CheckOut { get; set; }
+        public int OrganizationID { get; set; }
+        public int DepartmentID { get; set; }
+        public string OrganizationName { get; set; }
+        public string DepartmentName { get; set; }
     }
     public class TopHostModel
     {

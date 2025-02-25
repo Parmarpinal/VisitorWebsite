@@ -1,106 +1,24 @@
-﻿@model VisitorWebsite.Areas.Host.Models.HostModel;
+﻿<div class="container" style="width:173vh;height:80vh;">
 
-<section class="section">
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="card container">
-                <div class="card-body">
-                    <h2 class="ms-2 mt-3 mb-4" style="color:darkslateblue; font-weight:700;">Profile</h2>
-                    <div class="row">
-                        <div class="col">
-                            @* <div style="border:2px solid #A2A2CE;width:200px;height:200px;" class="rounded-circle">
-                                <img src="~/assets/img/profile-img.jpg" style="object-fit:cover" />
-                            </div> *@
-                            <div style="width:150px; height:150px ;border-radius:100px; display: flex; justify-content: center; align-items: center;box-shadow:0px 0px 20px darkslateblue">
-                                <img src="~/assets/img/profile-img.jpg" alt="Profile-Picture" class="rounded-circle" style="width:150px; height:150px">
-                            </div>
-                        </div>
-                        <div class="col-8" style="color:darkslateblue; font-size:17px; font-weight:600">
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    Host Name
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.UserName
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    Organization Name
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.OrganizationName
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    Department Name
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.DepartmentName
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    Age
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.Age
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    Email
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.Email
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    Mobile number
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.MobileNo
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    Gender
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.Gender
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    City
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.City
-                                </div>
-                            </div>
-                            <div class="row mb-2">
-                                <div class="col-5">
-                                    Joining date
-                                </div>
-                                <div class="col">:</div>
-                                <div class="col-5">
-                                    @Model.JoiningDate
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="1000">
+                <img style="width:173vh;height:80vh;" src="~/img/img2.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="1000">
+                <img style="width:173vh;height:80vh;" src="~/img/img1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img style="width:173vh;height:80vh;" src="https://www.vizitorapp.com/images/blog/17mar23.svg" class="d-block w-100" alt="..." />
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-</section>
+</div>

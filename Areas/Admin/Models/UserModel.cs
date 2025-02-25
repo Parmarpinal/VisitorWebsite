@@ -17,6 +17,15 @@ namespace VisitorWebsite.Areas.Admin.Models
         [EmailAddress]
         public string Email { get; set; }
 
+        public string? ImagePath { get; set; }
+
+        public IFormFile? ImageFile { get; set; }
+
+        [Required]
+        [MinLength(4)]
+        [MaxLength(8)]
+        public string Password { get; set; }
+
         [Required(ErrorMessage = "Mobile number should not be empty")]
         [Display(Name = "Mobile number")]
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Please enter a valid mobile number.")]

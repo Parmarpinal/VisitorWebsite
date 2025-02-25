@@ -515,6 +515,9 @@ wwwroot\fonts\summernote\summernote.ttf
 wwwroot\fonts\summernote\summernote.woff
 wwwroot\fonts\summernote\summernote.woff2
 wwwroot\img\arashmil.jpg
+wwwroot\img\bg1.jpg
+wwwroot\img\bg2.webp
+wwwroot\img\bg3.svg
 wwwroot\img\bg-404.jpeg
 wwwroot\img\blogpost.jpg
 wwwroot\img\chadengle.jpg
@@ -805,6 +808,8 @@ wwwroot\img\flags\yt.png
 wwwroot\img\flags\za.png
 wwwroot\img\flags\zm.png
 wwwroot\img\flags\zw.png
+wwwroot\img\img1.jpg
+wwwroot\img\img2.jpg
 wwwroot\img\img-shadow.png
 wwwroot\img\jm_denis.jpg
 wwwroot\img\kaiadmin\demo1.png
@@ -826,6 +831,7 @@ wwwroot\img\kaiadmin\logo_dark.svg
 wwwroot\img\kaiadmin\logo_documentation.png
 wwwroot\img\kaiadmin\logo_light.png
 wwwroot\img\kaiadmin\logo_light.svg
+wwwroot\img\logo.png
 wwwroot\img\logoproduct.svg
 wwwroot\img\logoproduct2.svg
 wwwroot\img\logoproduct3.svg

@@ -43,7 +43,9 @@
                                             <td>@v.City</td>
                                             <td>@v.Address</td>
                                             <td class ="text-center"><a class="btn btn-outline-success" asp-area="Admin" asp-controller="User" asp-action="GetReceptionists" asp-route-organizationID="@v.OrganizationID">@v.ReceptionistCount</a></td>
-                                            <td>@v.EstablishedDate</td>
+
+                                            <td>@v.EstablishedDate.ToString("dd/MM/yyyy") <br/> @v.EstablishedDate.ToString("hh:mm tt")</td>
+
                                             <td class="text-center">
                                                 <div class="form-button-action">
                                                     <a asp-controller="Organization" asp-action="OrganizationForm" asp-route-organizationID="@v.OrganizationID"

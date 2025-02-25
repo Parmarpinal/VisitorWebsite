@@ -12,16 +12,17 @@
                     <table class="table datatable">
                         <thead>
                             <tr>
+                                @* <th>Image</th> *@
                                 <th>Name</th>
                                 <th>Organization</th>
                                 <th>Department</th>
                                 <th>Host Name</th>
                                 <th>Purpose</th>
-                                <th>No of Person</th>
+                                <th class="text-center">No of Person</th>
                                 <th>ID Proof</th>
                                 <th>ID Proof No.</th>
                                 <th>Visit date</th>
-                                <th>Status</th>
+                                <th class="text-center">Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,6 +30,16 @@
                             @foreach (var v in Model)
                             {
                                 <tr>
+                                    @* <td>
+                                        @if (string.IsNullOrEmpty(v.ImagePath))
+                                        {
+                                            <img src="~/img/profile.jpg" alt="profile" style="width:60px;height:60px;border-radius:15px" />
+                                        }
+                                        else
+                                        {
+                                            <img src="@v.ImagePath" alt="profile" style="width:60px;height:60px;border-radius:15px" />
+                                        }
+                                    </td> *@
                                     <td>@v.VisitorName</td>
                                     <td>@v.OrganizationName</td>
                                     <td>@v.DepartmentName</td>
@@ -37,8 +48,21 @@
                                     <td class="text-center">@v.NoOfPerson</td>
                                     <td>@v.IDProof</td>
                                     <td>@v.IDProofNumber</td>
-                                    <td>@v.VisitDate</td>
-                                    <td>
+                                    <td style="width:120px">
+                                        @v.VisitDate.ToShortDateString()<br />
+
+                                        @{
+                                            TimeSpan? checkIn = v.CheckIn;
+
+                                            string formattedTime = checkIn.HasValue
+                                            ? DateTime.Today.Add(checkIn.Value).ToString("h:mm tt")  // Convert to 12-hour format with AM/PM
+                                            : "No check-in time";
+                                        }
+
+                                        <span>@formattedTime</span>
+                                    </td>
+
+                                    <td class="text-center">
                                         @{
                                             if(v.CheckIn!=null && v.CheckOut==null){
                                                 <span class="badge bg-danger">CheckedIn</span>
